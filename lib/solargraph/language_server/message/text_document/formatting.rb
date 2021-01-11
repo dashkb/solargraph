@@ -19,7 +19,7 @@ module Solargraph
               original = host.read_text(params['textDocument']['uri'])
               File.write tempfile, original
               begin
-                args = ['-a', '-f', 'fi', tempfile]
+                args = ['-A', '-f', 'fi', tempfile]
                 args.unshift('-c', fix_drive_letter(rubocop_file)) unless rubocop_file.nil?
                 options, paths = RuboCop::Options.new.parse(args)
                 store = RuboCop::ConfigStore.new
